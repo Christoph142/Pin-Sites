@@ -1,0 +1,19 @@
+{
+  "name"          : "StrappedPin",
+  "description"   : "__MSG_description__",
+  "developer"     : {"name" : "Christoph142"},
+  "homepage_url"  : "https://github.com/Christoph142/StrappedPin",
+  "version"       : "0.9",
+  "default_locale": "en",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions"			: ["tabs", "webRequest", "webRequestBlocking", "<all_urls>"],
+  "manifest_version"	: 2
+}
