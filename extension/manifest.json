@@ -3,16 +3,24 @@
   "description"   : "__MSG_description__",
   "developer"     : {"name" : "Christoph142"},
   "homepage_url"  : "https://github.com/Christoph142/StrappedPin",
-  "version"       : "0.9",
+  "version"       : "1.0",
   "default_locale": "en",
 
   "background": {
     "scripts": ["background.js"]
   },
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "19": "img/icon19.png",
+      "38": "img/icon38.png"
+    },
+    "default_title": "__MSG_pageaction_title__",
+    "default_popup": "pageAction/popup.html"
   },
   "permissions"			: ["tabs", "webRequest", "webRequestBlocking", "<all_urls>"],
   "manifest_version"	: 2

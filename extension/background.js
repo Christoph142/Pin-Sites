@@ -32,11 +32,14 @@ function addTab(tab){
 	    {urls: ["<all_urls>"], types: ["main_frame"], tabId: tab.id},
 	    ["blocking"]
 	);
+
+	chrome.pageAction.show(tab.id);
 	
 	console.log("monitoring tab", tab.id, "with", localStorage[tab.id]);
 }
 
 function removeTab(tab){
+	chrome.pageAction.hide(tab.id);
 	console.log("stopped monitoring tab", tab.id, "with", localStorage[tab.id]);
 	delete localStorage[tab.id];
 }
