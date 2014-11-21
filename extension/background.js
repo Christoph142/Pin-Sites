@@ -1,6 +1,8 @@
 "use strict";
 
 (function monitorPinnedTabs(){
+	localStorage.clear();
+	
 	chrome.tabs.query({}, function(tabs){
 		for(var i in tabs){
 			if(tabs[i]["pinned"]) addTab(tabs[i]);
