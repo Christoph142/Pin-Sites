@@ -14,14 +14,7 @@
     "48": "img/icon48.png",
     "128": "img/icon128.png"
   },
-  "page_action": {
-    "default_icon": {
-      "19": "img/icon19.png",
-      "38": "img/icon38.png"
-    },
-    "default_title": "__MSG_pageaction_title__",
-    "default_popup": "pageAction/popup.html"
-  },
+  
   "permissions"			: ["tabs", "webRequest", "webRequestBlocking", "<all_urls>"],
   "manifest_version"	: 2
 }

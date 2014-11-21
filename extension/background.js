@@ -1,15 +1,21 @@
 "use strict";
 
-chrome.runtime.onInstalled.addListener(monitorPinnedTabs);
-chrome.runtime.onStartup.addListener(monitorPinnedTabs);
-
-function monitorPinnedTabs(){
+(function monitorPinnedTabs(){
 	chrome.tabs.query({}, function(tabs){
 		for(var i in tabs){
 			if(tabs[i]["pinned"]) addTab(tabs[i]);
 		}
 	});
-}
+})();
+
+chrome.tabs.onReplaced.addListener(function (newId, oldId){
+	if(typeof localStorage[oldId] === "undefined") return;
+
+	addTab(newId);
+	removeTab(oldId);
+
+	console.log(oldId, "replaced by", newId);
+});
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab)
 {
@@ -33,13 +39,10 @@ function addTab(tab){
 	    ["blocking"]
 	);
 
-	chrome.pageAction.show(tab.id);
-	
 	console.log("monitoring tab", tab.id, "with", localStorage[tab.id]);
 }
 
 function removeTab(tab){
-	chrome.pageAction.hide(tab.id);
 	console.log("stopped monitoring tab", tab.id, "with", localStorage[tab.id]);
 	delete localStorage[tab.id];
 }
