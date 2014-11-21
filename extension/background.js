@@ -31,7 +31,17 @@ function addTab(tab){
 		{
 			if(typeof localStorage[details.tabId] !== "undefined" && details.url.indexOf( localStorage[details.tabId] ) === -1){
 				console.log(localStorage[details.tabId], "not in", details.url,". Opening in new tab.");
-				chrome.tabs.create({"url":details.url});
+				chrome.tabs.create({"url":details.url, "openerTabId":details.tabId}, function(createdTab){
+					chrome.webRequest.onBeforeRequest.addListener(function(createdDetails)
+						{
+							// back to pinned content -> back to pinned tab
+							chrome.tabs.update(createdTab.openerTabId, {"url":createdDetails.url, "highlighted":true, "active":true});
+							chrome.tabs.remove(createdDetails.tabId);
+						},
+					    {urls: [ "*://"+localStorage[details.tabId]+"/*" ], types: ["main_frame"], tabId: createdTab.id},
+					    ["blocking"]
+					);
+				});
 				return { redirectUrl: "javascript:/*silently cancels this request*/" };
 			}
 		},
