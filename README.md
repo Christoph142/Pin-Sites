@@ -13,13 +13,10 @@ So there are two ways you're currently working:
 What does this extension do?
 ----------------------------
 
-StrappedPin (name may still change before release) will fix this for you.
+StrappedPin will make your life easy.
 Once it's installed, it will simply open all links in a new tab that leave the domain that you pinned! :+1:
-
-Planned improvements
---------------------
-
-Adding a page action that allows you to adjust when links should get opened in new tabs
+And it's pretty smart. If you navigate back to your pinned content, it's automatically going to switch you back to your pinned tab.
+That's handy if you are e.g. thrown to an external login page and get redirected back to wherever you were thereafter.
 
 Feedback
 --------
