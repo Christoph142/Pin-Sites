@@ -1,4 +1,3 @@
 {
-	"description" :			{ "message" : "Opens all pinned tabs' external links in new tabs" },
-	"pageaction_title" :	{ "message" : "StrappedPin" }
+	"description" :	{ "message" : "Opens all pinned tabs' external links in new tabs" }
 }
