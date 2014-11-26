@@ -9,6 +9,7 @@ So there are two ways you're currently working:
 
 1. You're the controlled type: You always open links in new tabs (via context menu or key modifiers) or
 2. You always find yourself having clicked a link and now have to go back to your original website
+
 (Most probably you're a mixture of both of them ;) )
 
 What does this extension do?
