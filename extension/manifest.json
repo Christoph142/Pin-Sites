@@ -1,8 +1,8 @@
 {
-  "name"          : "StrappedPin",
+  "name"          : "Pin Sites",
   "description"   : "__MSG_description__",
   "developer"     : {"name" : "Christoph142"},
-  "homepage_url"  : "https://github.com/Christoph142/StrappedPin",
+  "homepage_url"  : "https://github.com/Christoph142/Pin-Sites",
   "version"       : "1.0",
   "default_locale": "en",
 

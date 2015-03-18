@@ -1,4 +1,4 @@
-StrappedPin
+Pin Sites
 ============
 
 What's the problem?
@@ -15,10 +15,12 @@ So there are two ways you're currently working:
 What does this extension do?
 ----------------------------
 
-StrappedPin will make your life easy.
+Pin Sites will make your life easy.
 Once it's installed, it will simply open all links in a new tab that leave the domain that you pinned! :+1:
 And it's pretty smart. If you navigate back to your pinned content, it's automatically going to switch you back to your pinned tab.
 That's handy if you are e.g. thrown to an external login page and get redirected back to wherever you were thereafter.
+
+What are you waiting for? Stop pinning tabs, Pin Sites!
 
 Feedback
 --------
