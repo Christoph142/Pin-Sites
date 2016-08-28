@@ -13,7 +13,7 @@
 chrome.tabs.onReplaced.addListener(function (newId, oldId){
 	if(typeof localStorage[oldId] === "undefined") return;
 
-	addTab(newId);
+	localStorage[newId] = localStorage[oldId];
 	removeTab(oldId);
 
 	console.log(oldId, "replaced by", newId);
@@ -23,7 +23,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab)
 {
 	if		(typeof changeInfo.pinned === "undefined") 	return;
 	else if (changeInfo.pinned) 						addTab(tab);
-	else 												removeTab(tab);
+	else 												removeTab(tabId);
 });
 
 function addTab(tab){
@@ -54,7 +54,7 @@ function addTab(tab){
 	console.log("monitoring tab", tab.id, "with", localStorage[tab.id]);
 }
 
-function removeTab(tab){
-	console.log("stopped monitoring tab", tab.id, "with", localStorage[tab.id]);
-	delete localStorage[tab.id];
+function removeTab(tabId){
+	console.log("stopped monitoring tab", tabId, "with", localStorage[tabId]);
+	delete localStorage[tabId];
 }
