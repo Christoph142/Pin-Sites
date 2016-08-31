@@ -11,7 +11,7 @@
 })();
 
 chrome.tabs.onReplaced.addListener(function (newId, oldId){
-	if(typeof localStorage[oldId] === "undefined" || newId === oldId) return;
+	if(newId === oldId || typeof localStorage[oldId] === "undefined") return;
 
 	localStorage[newId] = localStorage[oldId];
 	removeTab(oldId);
